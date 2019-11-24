@@ -7,6 +7,8 @@ chmod 400 /root/.ssh/id_rsa
 echo '=================== Update all submodules ==================='
 git submodule init
 git submodule update --recursive --remote
+echo '=================== Install dependencies ==================='
+yarn
 echo '=================== Build site ==================='
 hexo generate
 echo '=================== Publish to GitHub Pages ==================='
