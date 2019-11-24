@@ -18,7 +18,6 @@ cp source/theme_config.yml themes/icarus/_config.yml
 hexo generate --silent
 echo '=================== Publish to GitHub Pages ==================='
 cd public
-rm -rf node_modules
 remote_repo="git@github.com:${GITHUB_DEPLOY_REPOSITORY}.git" && \
 remote_branch=${GITHUB_DEPLOY_BRANCH} && \
 echo "Pushing Builds to $remote_repo:$remote_branch" && \
