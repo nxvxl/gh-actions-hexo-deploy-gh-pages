@@ -10,6 +10,7 @@ git submodule update --recursive --remote
 echo '=================== Install dependencies ==================='
 yarn
 echo '=================== Build site ==================='
+cp source/theme_config.yml themes/icarus/_config.yml
 hexo generate
 echo '=================== Publish to GitHub Pages ==================='
 cd public
