@@ -22,7 +22,7 @@ RUN apk add --no-cache \
         libc6-compat \
         libstdc++
 
-RUN npm install -g hexo-cli
+RUN npm install -g hexo-cli yarn
 
 COPY entrypoint.sh /entrypoint.sh
 
