@@ -1,4 +1,6 @@
 #!/bin/sh
+GITHUB_DEPLOY_REPOSITORY=${GITHUB_REMOTE_REPOSITORY:-$GITHUB_REPOSITORY}
+GITHUB_DEPLOY_BRANCH=${GITHUB_BRANCH:-"gh-pages"}
 echo '=================== Create deploy key to push ==================='
 mkdir /root/.ssh
 ssh-keyscan -t rsa github.com > /root/.ssh/known_hosts && \
@@ -11,7 +13,7 @@ echo '=================== Install dependencies ==================='
 yarn
 echo '=================== Build site ==================='
 cp source/theme_config.yml themes/icarus/_config.yml
-hexo generate
+hexo generate --silent
 echo '=================== Publish to GitHub Pages ==================='
 cd public
 remote_repo="git@github.com:${GITHUB_DEPLOY_REPOSITORY}.git" && \
