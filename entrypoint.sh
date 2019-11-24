@@ -1,4 +1,6 @@
 #!/bin/sh
+set -ex
+
 GITHUB_DEPLOY_REPOSITORY=${GITHUB_REMOTE_REPOSITORY:-$GITHUB_REPOSITORY}
 GITHUB_DEPLOY_BRANCH=${GITHUB_BRANCH:-"gh-pages"}
 echo '=================== Create deploy key to push ==================='
